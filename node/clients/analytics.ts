@@ -5,7 +5,9 @@ export default class Analytics extends AppClient {
         super('vtex.mocked-analytics@0.x', context, options)
     }
     
-    public getLiveUsers(): Promise<LiveUsersProduct[]> {}
+    public getLiveUsers(): Promise<LiveUsersProduct[]> {
+        return this.http.get('_v/live-products')
+    }
 }
 
 interface LiveUsersProduct {
